@@ -20,7 +20,7 @@ public class ItemStackUtils {
         // Get lore list
         NBTTagList lore = display.getTagList("Lore", 8);
         // Make sure lore has tags
-        if (lore.hasNoTags()) return "";
+        if (lore.isEmpty()) return "";
         // Loop through lore and check line
         for (int i = 0; i < lore.tagCount(); ++i) {
             String loreLine = lore.getStringTagAt(i);

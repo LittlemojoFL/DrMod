@@ -25,7 +25,7 @@ public class ArmorUtils {
         if (!stack.getTagCompound().hasKey("modifiers", 10)) return Collections.singletonList(0);
         NBTTagCompound itemAttributes = stack.getTagCompound().getCompoundTag("modifiers");
         // If attributes has not tags then return
-        if (itemAttributes.hasNoTags()) return Collections.singletonList(0);
+        if (itemAttributes.isEmpty()) return Collections.singletonList(0);
         // If attributes has not tags then return
         if (!itemAttributes.hasKey(intName)) return Collections.singletonList(0);
         // Return all

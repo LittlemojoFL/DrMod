@@ -5,4 +5,4 @@ pluginManagement {
     }
 }
 
-rootProject.name = 'DrMod'
+rootProject.name = 'drmod'
