@@ -18,18 +18,18 @@ public class ArmorTooltipCompare {
     @SideOnly(Side.CLIENT)
     @SubscribeEvent
     public void onItemTooltip(ItemTooltipEvent event) {
-//        ItemStack tooltipStack = event.getItemStack();
-//        if (tooltipStack.getTagCompound() == null || !tooltipStack.getTagCompound().isEmpty()) return;
-//        ArmorUtils.ArmorType tooltipStackArmorType = ArmorUtils.getArmorType(tooltipStack);
-//        if (tooltipStackArmorType != ArmorUtils.ArmorType.NONE) {
-//            ItemAttributes tooltipModifiers = ArmorUtils.getModifiers(tooltipStack);
-//            int value = tooltipStackArmorType.ordinal() - 1;
-//            if (value == -1) return;
-//            ItemStack equipped = Minecraft.getMinecraft().player.inventory.armorInventory.get(value);
-//            if (equipped != tooltipStack) {
-//                addCompareTooltip(event.getToolTip(), tooltipModifiers, equipped);
-//            }
-//        }
+        ItemStack tooltipStack = event.getItemStack();
+        if (tooltipStack.getTagCompound() == null || !tooltipStack.getTagCompound().isEmpty()) return;
+        ArmorUtils.ArmorType tooltipStackArmorType = ArmorUtils.getArmorType(tooltipStack);
+        if (tooltipStackArmorType != ArmorUtils.ArmorType.NONE) {
+            ItemAttributes tooltipModifiers = ArmorUtils.getModifiers(tooltipStack);
+            int value = tooltipStackArmorType.ordinal() - 1;
+            if (value == -1) return;
+            ItemStack equipped = Minecraft.getMinecraft().player.inventory.armorInventory.get(value);
+            if (equipped != tooltipStack) {
+                addCompareTooltip(event.getToolTip(), tooltipModifiers, equipped);
+            }
+        }
     }
 
     public void addCompareTooltip(List<String> tooltips, ItemAttributes itemAttributes, ItemStack equippedStacks) {
